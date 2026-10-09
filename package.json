@@ -1,0 +1,36 @@
+{
+  "name": "aws-sdet-local-practice",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/api/server.ts",
+    "worker": "tsx src/worker/pollQueue.ts",
+    "aws:bootstrap": "tsx src/aws/bootstrap.ts",
+    "aws:reset": "tsx src/aws/reset.ts",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "typecheck": "tsc --noEmit",
+    "kit:build": "bash scripts/package-kit.sh"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.738.0",
+    "@aws-sdk/client-eventbridge": "^3.738.0",
+    "@aws-sdk/client-s3": "^3.738.0",
+    "@aws-sdk/client-sqs": "^3.738.0",
+    "@aws-sdk/lib-dynamodb": "^3.738.0",
+    "@aws-sdk/s3-request-presigner": "^3.738.0",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^4.1.8"
+  }
+}

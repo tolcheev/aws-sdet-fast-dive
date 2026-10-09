@@ -1,0 +1,14 @@
+services:
+  localstack:
+    image: localstack/localstack:3.8.1
+    container_name: aws-sdet-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - SERVICES=s3,sqs,dynamodb,events,logs,iam,sts
+      - DEBUG=0
+      - PERSISTENCE=1
+    volumes:
+      - ./.localstack:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
